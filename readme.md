@@ -7,3 +7,9 @@
 # Useful Links
 - [google's dataset for training models](https://ai.google.com/research/ConceptualCaptions/download)
 - [microsofts oscar model](https://github.com/microsoft/Oscar)
+
+# Instructions to use coco.sh
+- make sure you have 'wget' installed
+- run the coco.sh file
+    - on windows just type 'coco.sh' in the repo's main dir
+- wait for the download
