@@ -14,14 +14,16 @@ def load_data(path: str) -> Tuple[np.ndarray, str]:
         json_data = json.loads(f.read())
         for y in json_data['annotations']:
             image_json = [x for x in json_data['images']if y['image_id'] == x['id']][0]
-            yield clean_image(load_image(image_json['file_name'])), cleanp.ndarray str_text(y)
+            yield clean_image(load_image(image_json['file_name'])), y
 
 
 def load_image(file_name: str, folder:str='coco/images/val2017') -> np.ndarray:
     return io.imread(os.path.join(folder, file_name))
 
 def clean_image(img: np.ndarray) -> np.ndarray: 
-    return color.rgb2gray(img)
+    image = color.rgb2gray(img)
+    image = [[x / 255 for x in y] for y in img]
+    return image
 
 def clean_text(txt: str) -> str:
     return txt
