@@ -1,18 +1,19 @@
 # app.py
 from flask import Flask, request, jsonify, flash, abort
 from flask_cors import *
-from skimage import color
 from skimage import io
-from coco_model import clean_image, clean_text
+from src import cleaning, dataset, model
 
 app = Flask(__name__)
 CORS(app, origins='*')
 
+m = model.Model()
+
 @app.route('/caption', methods=['POST'])
 def caption():
     file = request.files['image']
-    image = clean_image(io.imread(file))
-    return "{}\n{}".format(image.shape, image[0][:10]), 200
+    image = cleaning.clean_image(io.imread(file))
+    return m.infer(image), 200
 
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
