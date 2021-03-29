@@ -4,6 +4,7 @@ astroid==2.5.1
 async-generator==1.10
 atomicwrites==1.4.0
 attrs==20.3.0
+autopep8==1.5.6
 backcall==0.2.0
 bleach==3.3.0
 certifi==2020.12.5
@@ -13,6 +14,7 @@ click==7.1.2
 colorama==0.4.4
 coverage==5.5
 cycler==0.10.0
+dataclasses==0.8
 decorator==4.4.2
 defusedxml==0.7.1
 engarde==0.4.0
@@ -53,6 +55,7 @@ nbdime==2.1.0
 nbformat==5.1.2
 nest-asyncio==1.5.1
 networkx==2.5
+nltk==3.5
 notebook==6.2.0
 numpy==1.19.5
 packaging==20.9
@@ -65,6 +68,7 @@ pluggy==0.13.1
 prometheus-client==0.9.0
 prompt-toolkit==3.0.17
 py==1.10.0
+pycodestyle==2.7.0
 pycparser==2.20
 Pygments==2.8.1
 pylint==2.7.2
@@ -81,6 +85,7 @@ pyzmq==22.0.3
 q==2.6
 qtconsole==5.0.3
 QtPy==1.9.0
+regex==2021.3.17
 requests==2.25.1
 runipy==0.1.5
 scikit-image==0.17.2
@@ -97,6 +102,10 @@ testpath==0.4.4
 threadpoolctl==2.1.0
 tifffile==2020.9.3
 toml==0.10.2
+torch==1.8.1+cpu
+torchaudio==0.8.1
+torchtext==0.9.1
+torchvision==0.9.1+cpu
 tornado==6.1
 tqdm==4.59.0
 traitlets==4.3.3

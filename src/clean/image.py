@@ -1,3 +1,4 @@
+from PIL import Image
 import numpy as np
 from torch import nn
 from torchvision import transforms
@@ -10,7 +11,6 @@ SIZE = 400
 
 transform = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Grayscale(1),
     transforms.Resize((SIZE, SIZE)),
     transforms.GaussianBlur(GAUSSIAN_KERNAL),
     transforms.Normalize(MEAN, STD),
@@ -19,3 +19,7 @@ transform = transforms.Compose([
 
 def clean(img: np.array) -> np.array:
     return transform(img)
+
+if __name__ == "__main__":
+    img = Image.open(r"C:\Users\tallo\OneDrive\Documents\projects\ada_submission\coco\images\val2017\000000061418.jpg")
+    print(clean(img).shape)
